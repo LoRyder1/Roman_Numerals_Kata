@@ -23,3 +23,14 @@ def to_roman(num)
   end
   roman
 end
+
+# Feature 2 - Converting Roman to Arabic
+
+def to_arabic(num)
+end
+
+# p to_arabic("I")
+# p to_arabic("III")
+# p to_arabic("IX") # 9 
+# p to_arabic("MLXVI") # 1066
+# p to_arabic("MCMLXXXIX") # 1989
