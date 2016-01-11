@@ -9,9 +9,15 @@ def to_roman(num)
     "II"
   elsif num == 3
     "III"
+  elsif num == 4
+    "IV"
+  elsif num == 9
+    "IX"
   end
 end
 
 p to_roman(1)
 p to_roman(2)
 p to_roman(3)
+p to_roman(4)
+p to_roman(9)
