@@ -18,7 +18,8 @@ ROMAN_NUMBERS = { 1000 => "M",
 def to_roman(num)
   roman = ""
   ROMAN_NUMBERS.each_key do |key|
-    roman = ROMAN_NUMBERS[key] * (num/key)
+    roman = roman + ROMAN_NUMBERS[key] * (num/key)
+    num = num % key
   end
   roman
 end
