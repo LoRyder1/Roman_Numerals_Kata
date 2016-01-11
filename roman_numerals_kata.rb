@@ -2,18 +2,25 @@
 
 # Feature 1 - Converting Arabic to Roman
 
+ROMAN_NUMBERS = { 1000 => "M",
+                  900 => "CM",
+                  500 => "D",
+                  400 => "CD",
+                  100 => "C",
+                  50 => "L",
+                  40 => "XL",
+                  10 => "X",
+                  9 => "IX",
+                  5 => "V",
+                  4 => "IV",
+                  1 => "I" }
+
 def to_roman(num)
-  if num == 1
-    "I"
-  elsif num == 2
-    "II"
-  elsif num == 3
-    "III"
-  elsif num == 4
-    "IV"
-  elsif num == 9
-    "IX"
+  roman = ""
+  ROMAN_NUMBERS.each_key do |key|
+    roman = ROMAN_NUMBERS[key] * (num/key)
   end
+  roman
 end
 
 p to_roman(1)
