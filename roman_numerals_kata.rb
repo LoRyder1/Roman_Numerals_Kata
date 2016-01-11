@@ -28,15 +28,11 @@ end
 
 def to_arabic(num)
   arabic_num = 0
-  characters = num.chars
-  characters.each do |x|
-    arabic_num += ROMAN_NUMBERS.invert[x]
+  ROMAN_NUMBERS.values.each do |roman|
+    while num.start_with?(roman)
+      arabic_num += ROMAN_NUMBERS.invert[roman]
+      num = num.slice(roman.length, num.length)
+    end
   end
   arabic_num
 end
-
-p to_arabic("I")
-p to_arabic("III")
-p to_arabic("IX") # 9 
-p to_arabic("MLXVI") # 1066
-p to_arabic("MCMLXXXIX") # 1989
